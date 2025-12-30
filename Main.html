@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Trisha Mae L. Capundag</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#f4f7fb;
+    --text:#1f2937;
+    --blue:#2563eb;
+    --light-blue:#e0e7ff;
+    --card:#ffffff;
+}
+
+body.dark{
+    --bg:#0f172a;
+    --text:#e5e7eb;
+    --card:#1e293b;
+}
+
+*{box-sizing:border-box;}
+
+body{
+    margin:0;
+    font-family:'Montserrat',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:.4s;
+    cursor:none;
+    overflow-x:hidden;
+}
+
+/* Cursor */
+.cursor{
+    width:14px;
+    height:14px;
+    border:2px solid var(--blue);
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    z-index:9999;
+}
+
+/* Navigation */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#ffffffdd;
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    padding:15px;
+    margin:0;
+}
+nav a{
+    color:var(--blue);
+    margin:0 18px;
+    text-decoration:none;
+    font-weight:600;
+}
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* Sections */
+.section{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transform:translateY(60px);
+    transition:.8s ease;
+    padding:100px 20px;
+    text-align:center;
+}
+.section.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Hero */
+.hero h1{
+    font-size:3.2rem;
+    color:var(--blue);
+}
+.hero p{
+    font-size:1.3rem;
+}
+
+/* Cards */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    max-width:1100px;
+}
+.card{
+    background:var(--card);
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s;
+}
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(37,99,235,.2);
+}
+
+/* Skills */
+.skill{
+    margin-bottom:18px;
+    text-align:left;
+}
+.bar{
+    background:var(--light-blue);
+    border-radius:10px;
+    overflow:hidden;
+}
+.progress{
+    height:14px;
+    background:linear-gradient(90deg,var(--blue),#60a5fa);
+}
+
+/* Button */
+.blue-btn{
+    padding:12px 34px;
+    background:var(--blue);
+    color:white;
+    border:none;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+}
+.blue-btn:hover{
+    opacity:.9;
+}
+
+/* Extras */
+#theme-toggle{
+    position:fixed;
+    top:15px;
+    right:20px;
+    z-index:1001;
+}
+#view-counter{
+    position:fixed;
+    bottom:10px;
+    left:10px;
+    font-size:.9rem;
+    color:var(--blue);
+}
+#back-to-top{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="cursor"></div>
+<div id="view-counter">Views: 0</div>
+<button id="theme-toggle">🌙</button>
+
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section id="home" class="section hero">
+<div>
+<h1>Trisha Mae L. Capundag</h1>
+<p>Aspiring Virtual Assistant | Hospitality & Media Support</p>
+</div>
+</section>
+
+<section id="about" class="section">
+<div style="max-width:850px">
+<h2>About Me</h2>
+<p>
+Aspiring Virtual Assistant with strong skills in video editing, graphic design, social media support, data entry, and administrative tasks. A 2nd year undergraduate in Bachelor of Science in Hospitality Management, bringing a solid background in customer service, documentation, and task coordination. Detail-oriented, tech-savvy, and eager to apply transferable skills in a remote work environment.
+</p>
+</div>
+</section>
+
+<section id="experience" class="section">
+<div>
+<h2>Work Experience</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Zekiah’s Sisig Corner</h3>
+<p><strong>2024 – 2025</strong></p>
+<p>On-call catering services: supported food prep, buffet setup, guest service, and ensured cleanliness and satisfaction.</p>
+</div>
+
+<div class="card">
+<h3>Sweetay Gowns & Events</h3>
+<p><strong>2023 – 2024</strong></p>
+<p>On-call wedding services: assisted with decorations, guest coordination, waitstaff duties, and program assistance.</p>
+</div>
+
+<div class="card">
+<h3>RLT Insurance & Allied Services</h3>
+<p><strong>2022 – 2023</strong></p>
+<p>Authorized Representative: policy encoding, cash handling, client assistance, and record-keeping.</p>
+</div>
+
+<div class="card">
+<h3>Private Household</h3>
+<p><strong>2020 – 2021</strong></p>
+<p>Assisted with household tasks and childcare, managing time and responsibilities efficiently.</p>
+</div>
+
+<div class="card">
+<h3>Small Food Business</h3>
+<p><strong>2019 – 2020</strong></p>
+<p>Cashier and all-around staff: order processing, POS, food prep, and customer service.</p>
+</div>
+
+<div class="card">
+<h3>Street Food Vendor Helper</h3>
+<p><strong>2009 – 2019</strong></p>
+<p>Supported food preparation, sales, and customer service in a family-run micro-business.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="education" class="section">
+<div>
+<h2>Education</h2>
+<div class="grid">
+<div class="card">
+<h3>University of Southeastern Philippines - Obrero Campus</h3>
+<p>Bachelor of Science in Hospitality Management, Major in Hotel Administration<br>
+2nd Year Undergraduate<br>2023 – 2025</p>
+</div>
+<div class="card">
+<h3>Davao City National High School</h3>
+<p>Accountancy, Business, and Management Strand, Special Program in the Arts (SPA) Alumni<br>
+Senior High School Graduate<br>2017 – 2023</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="skills" class="section">
+<div style="max-width:720px">
+<h2>Core Competencies & Tools</h2>
+<div class="skill">Video Editing & Short-Form Content Creation
+<div class="bar"><div class="progress" style="width:90%"></div></div></div>
+<div class="skill">Graphic Design for Social Media
+<div class="bar"><div class="progress" style="width:85%"></div></div></div>
+<div class="skill">Social Media Content Posting & Organization
+<div class="bar"><div class="progress" style="width:80%"></div></div></div>
+<div class="skill">Data Entry & Digital Record Management
+<div class="bar"><div class="progress" style="width:85%"></div></div></div>
+<div class="skill">Administrative & Clerical Support
+<div class="bar"><div class="progress" style="width:85%"></div></div></div>
+<div class="skill">Customer Communication & Support
+<div class="bar"><div class="progress" style="width:90%"></div></div></div>
+<div class="skill">Time Management & Multitasking
+<div class="bar"><div class="progress" style="width:85%"></div></div></div>
+<div class="skill">Attention to Detail & Accuracy
+<div class="bar"><div class="progress" style="width:90%"></div></div></div>
+
+<h3>Tools Proficiency</h3>
+<ul>
+<li>Video Editing & Design: CapCut, YouCut, VN, KineMaster, Filmora, Canva, PicsArt, ibis Paint X, Remini, Hypic, Google Snapseed, Photoroom, Adobe Photoshop (basic)</li>
+<li>Productivity & Administration: Google Workspace, Microsoft Office Suite</li>
+<li>Communication & Online Tools: Zoom, Google Meet, Microsoft Teams</li>
+<li>Social Media Platforms: Facebook, Instagram, TikTok, YouTube, Meta Business Suite, Pinterest, Telegram</li>
+</ul>
+
+</div>
+</section>
+
+<section id="contact" class="section">
+<div>
+<h2>Contact</h2>
+<p>📍 Purok Sta. Cruz, Malagamot Road, Indangan, Buhangin District, Davao City, 8000</p>
+<p>📞 0953 211 9173</p>
+<p>📧 trishalaginancapundag@gmail.com</p>
+</div>
+</section>
+
+<div id="back-to-top">↑</div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+const sections=document.querySelectorAll('.section');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+},{threshold:0.3});
+sections.forEach(sec=>observer.observe(sec));
+
+const back=document.getElementById('back-to-top');
+window.addEventListener('scroll',()=>{back.style.display=window.scrollY>300?'block':'none';});
+back.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+
+let views=localStorage.getItem('views')||0;
+views++;
+localStorage.setItem('views',views);
+document.getElementById('view-counter').innerText=`Views: ${views}`;
+
+const cursor=document.querySelector('.cursor');
+window.addEventListener('mousemove',e=>{
+cursor.style.left=e.clientX+'px';
+cursor.style.top=e.clientY+'px';
+});
+
+document.getElementById('theme-toggle').onclick=()=>{document.body.classList.toggle('dark');};
+});
+</script>
+
+</body>
+</html>
